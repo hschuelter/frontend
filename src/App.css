@@ -1,0 +1,326 @@
+.App {
+  text-align: center;
+}
+
+.nav-bar {
+  /* display: flex; */
+  width: 100%;
+
+  min-height: 40px;
+  line-height: 40px;
+
+  border-bottom: 2px solid hsl(228, 100%, 97%);
+
+}
+
+
+.nav-bar a {
+  color: black;
+  text-decoration: none;
+
+}
+
+.nav-bar a:hover {
+  color: #3f51b5;
+  text-decoration: none;
+
+}
+
+.left {
+  margin-right: auto;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.search-body {
+  /* width: 80%; */
+  
+  background-color: #f3f3f3;
+  background-color: hsl(228, 100%, 99%);
+  
+  /* margin-left: 10%; */
+  /* margin-bottom: 1%; */
+  margin-top: 1%;
+  padding: 1% 1%;
+
+}
+
+.container {
+  display: flex;
+  /* padding: 5px; */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: auto;
+  /* background-color: tomato; */
+
+}
+
+.filter-line {
+  width: 100%;
+
+  /* background-color: royalblue; */
+}
+
+.filter-field {
+  width: 50%;
+  float: left;
+  text-align: left;
+
+  /* background-color: royalblue; */
+}
+
+.search-field {
+  padding-bottom: 10px;
+  /* background-color: rosybrown; */
+}
+
+.search-field b {
+  padding-right: 1%;
+  /* margin-left: 0%; */
+  /* background-color: rosybrown; */
+}
+
+.search-filters {
+  /* text-align: left; */
+
+  /* background-color: royalblue; */
+}
+
+.search-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  background-color: #3F51B5;
+  
+  font-weight: bold;
+  font-size: 16px;
+  
+  border-radius: 5px;
+  border: none;
+
+  /* line-height: 55px; */
+
+  margin: auto;
+
+  height: 55px;
+  width: 20%;
+}
+
+.search-button:hover {
+  background-color: #3949A3;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+
+}
+
+.span search-label {
+  margin: auto;
+  color: white;
+}
+
+.MuiButton-root {
+  height: 40px;
+}
+
+.results-header {
+  width: 80%;
+
+  margin-left: 10%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  padding: 1% 1%;
+}
+
+.results-found {
+  text-align: left;
+  font-size: 16px;
+  width: 0%;
+
+  padding-left:  10%;
+  /* margin-right:  5%; */
+  width: 40%;
+  /* background-color: tomato; */
+}
+
+.container-download {
+  width: 100%;
+  margin: auto;
+  /* background-color: tomato; */
+}
+
+.download-button {
+  display: flex;
+  /* width: 35%; */
+  
+  font-weight: bold;
+  font-size: 14px;
+  
+  border-radius: 5px;
+  border: none;
+  
+  color: white;
+  background-color: #3F51B5;
+
+  height: 50px;
+}
+
+
+.download-button:hover {
+  background-color: #4472CA;
+  cursor: pointer;
+}
+
+.download-text {
+  width: 60%;
+  margin: auto;
+  padding-right: 10%;
+  
+  line-height: 50px;
+  /* background-color: tomato; */
+}
+
+.download-icon {
+  width: 20%;
+  margin: auto;
+  /* background-color: tomato; */
+}
+
+.articles {
+  /* background-color: #9c9c9c; */
+}
+
+.articles hr {
+  width: 80%;
+}
+
+.item-container {
+  color:  #2a2a2a;
+  /* width: 80%; */
+  margin: 0 auto;
+  /* margin-top: 10px; */
+  
+  /* border: 1px solid #1F2232; */
+}
+
+.item-container:hover {
+  /* background-color: #e6f2e9; */
+  background-color: hsl(228, 100%, 97%);
+  /* background-color: #f3f3f3; */
+  /* cursor: pointer; */
+
+  transition: 0.2s ease-in-out;
+
+}
+
+.item-title {
+  display: flex;
+
+  padding-left: 1px;
+  padding-right: 10px;
+
+  /* background-color: #8d1744; */
+}
+
+.item-title b {
+  text-align: left;
+  min-width: 95px;
+  
+  padding-top: 7px;
+  margin-bottom: 5px;
+
+  /* background-color: #3cd143; */
+}
+
+.item-title div {
+  text-align: justify;
+  padding-top: 5px;
+
+  /* margin-bottom: 5px; */
+}
+
+.expand-button {
+  background-color: transparent;
+  
+  padding: 2px;
+  margin: 3px;
+
+  border: 1px solid #d4e1f7;
+  border-radius: 5px;
+
+
+  color: #3F51B5;
+}
+
+.expand-button:hover {
+  background-color: #d4e1f7;
+  cursor: pointer;
+}
+
+.data {
+  display: flex;
+  padding: 5px 10px;
+  /* background-color: #8d1744; */
+
+}
+
+.data b {
+  text-align: left;
+  margin-left: 25px;
+  min-width: 96px;
+  max-width: 96px;
+
+  /* background-color: #3cd143; */
+}
+
+.data div {
+  text-align: justify;
+
+}
+
+.references {
+  text-align: justify;
+  /* background-color: #4ad0e2; */
+}
+
+.ref {
+  padding: 0px 0px 10px;
+  /* background-color: #e24a4a; */
+
+}
+
+.graph {
+  /* width: 80%; */
+  /* width: 800px; */
+  /* margin: 0 auto; */
+  border: 1px solid #1F2232;
+
+  margin: 10px auto;
+
+  resize: both;
+  /* overflow: auto; */
+}
+
+.graph:hover {
+  background-color: #f0f3ff;
+}
+
+.venues {
+  width: 80%;
+  padding-left: 10%;
+  padding-top: 1%;
+  /* background-color: tomato; */
+}
+
+
+/* COLORS */
+.gray {
+  background-color: #999999;
+}
+
+.tomato {
+  background-color: tomato;
+}
