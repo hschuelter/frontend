@@ -14,7 +14,7 @@ import GetAppIcon from '@material-ui/icons/GetApp';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 import { Graph } from "react-d3-graph";
-import NavBar from './navBar';
+// import NavBar from './navBar';
 import SearchForm from './searchForm'
 
 
@@ -38,119 +38,138 @@ class Search extends React.Component {
 	}
 
 	componentWillMount() {
-			this.setState({
-					search_field: '',
-					count: 700, 
-					author: '',
-					venue: '',
-					begin_date: '',
-					end_date: '',
-					data: [], 
-					show_graph: false,
-					show_loading: false,
-					current_page: 0,
-					rows_per_page: 20,
-					search: false
-			});
+		this.setState({
+			search_field: '',
+			count: 700, 
+			author: '',
+			venue: '',
+			begin_date: '',
+			end_date: '',
+			data: [], 
+			show_graph: false,
+			show_loading: false,
+			current_page: 0,
+			rows_per_page: 20,
+			search: false
+		});
 	}
 	
 	setSearchField(e) {
-			var search_field = Api.clearInput(e.target.value).join('+');
-			// console.log(search_field);
+		var search_field = Api.clearInput(e.target.value).join('+');
+		// console.log(search_field);
 
-			this.setState({
-					search_field: search_field
-			});
+		this.setState({
+			search_field: search_field
+		});
 	}
 	
 	setAuthorField(e) {
-			var author = Api.clearInput(e.target.value).join('+');
-			// console.log(author);
+		var author = Api.clearInput(e.target.value).join('+');
+		// console.log(author);
 
-			this.setState({
-					author: author
-			});
+		this.setState({
+			author: author
+		});
 	}
 
 	setCountField(e) {
-			var count = e.target.value.split(' ').join('+');
-			// console.log(count);
+		var count = e.target.value.split(' ').join('+');
+		// console.log(count);
 
-			this.setState({
-					count: count
-			});
+		this.setState({
+			count: count
+		});
 	}
 
 	setVenue(e) {
-			var venue = Api.clearInput(e.target.value).join('+');
-			// console.log(venue);
+		var venue = Api.clearInput(e.target.value).join('+');
+		// console.log(venue);
 
-			this.setState({
-					venue: venue
-			});
+		this.setState({
+			venue: venue
+		});
 	}
 
 	setBeginDate(e) {
-			var begin_date = e.target.value;
-			// console.log(begin_date + '-01');
+		var begin_date = e.target.value;
+		// console.log(begin_date + '-01');
 
-			this.setState({
-					begin_date: begin_date + '-01'
-			});
+		this.setState({
+			begin_date: begin_date + '-01'
+		});
 	}
 
 	setEndDate(e) {
-			var end_date = e.target.value;
-			// console.log(end_date + '-01');
+		var end_date = e.target.value;
+		// console.log(end_date + '-01');
 
-			this.setState({
-					end_date: end_date + '-01'
-			});
+		this.setState({
+			end_date: end_date + '-01'
+		});
 	}
 
 	setShowGraph(e) {
-			this.setState({
-					show_graph: !this.state.show_graph
-			});
-			// console.log(this.state.show_graph);
+		this.setState({
+			show_graph: !this.state.show_graph
+		});
+		// console.log(this.state.show_graph);
 	}
 
 	handlePageChange(e, new_page) {
-			this.setState({
-					current_page: new_page
-			});
+		this.setState({
+			current_page: new_page
+		});
 	}
 	
 	async runSearch(e) {
-			e.preventDefault();
+		e.preventDefault();
 
-			const search_field = this.state.search_field;
-			const count = this.state.count;
-			const author = this.state.author;
-			const venue = this.state.venue;
-			const begin_date = this.state.begin_date;
-			const end_date = this.state.end_date;
+		const search_field = this.state.search_field;
+		const count = this.state.count;
+		const author = this.state.author;
+		const venue = this.state.venue;
+		const begin_date = this.state.begin_date;
+		const end_date = this.state.end_date;
 
-			if (search_field === ''){
-					return ;
-			}
+		if (search_field === ''){
+			return ;
+		}
 
-			this.setState({
-					show_loading: true
-			});
+		this.setState({
+			show_loading: true
+		});
 
-			const result = await Api.search(search_field, count, author, venue, begin_date, end_date);
-			this.setState({
-					data: result.data, 
-					show_loading: false,
-					search: true
-			});
+		const result = await Api.search(search_field, count, author, venue, begin_date, end_date);
+		this.setState({
+			data: result.data, 
+			show_loading: false,
+			search: true
+		});
 	}
 
 	render() {
 		return (
 				<div> 
-					<NavBar />
+					{/* <NavBar /> */}
+					
+					<div class="nav-bar">
+						<Grid container spacing={0} >
+							<Grid item xs={8} />
+							<Grid item xs={1} >
+								<a href='/search'> <div class="highlight"> Busca </div> </a>
+							</Grid>
+							<Grid item xs={1} >
+								<a href='/periodicos'> <div> Periódicos </div> </a>
+							</Grid>
+							<Grid item xs={1} >
+								<a href='/eventos'>  <div> Eventos </div> </a>
+							</Grid>
+							<Grid item xs={1} >
+								<a href='/about' >   <div> Sobre </div>  </a>
+							</Grid>
+						</Grid>
+					</div>
+
 					<SearchForm
 						runSearch={e => this.runSearch(e)}
 						setSearchField={e => this.setSearchField(e)} 
@@ -165,12 +184,12 @@ class Search extends React.Component {
 					<div> 
 						{!this.state.show_graph ? null : 
 						<Grid container spacing={2}>
-								<Grid item xs={12} class="graph">
-										<Graph
-												id="authors-graph"
-												data={ Api.getAuthorData(this.state.data) }
-												config={ Api.getGraphConfig() }/>
-								</Grid>
+							<Grid item xs={12} class="graph">
+								<Graph
+									id="authors-graph"
+									data={ Api.getAuthorData(this.state.data) }
+									config={ Api.getGraphConfig() }/>
+							</Grid>
 						</Grid>
 						}
 						<Grid container spacing={2}>
@@ -212,12 +231,12 @@ class Search extends React.Component {
 									</Table>
 								</TableContainer>
 								<TablePagination
-										rowsPerPageOptions={[20]}
-										count={this.state.data.length}
-										rowsPerPage={this.state.rows_per_page}
-										page={this.state.current_page}
-										onChangePage={ (event, new_page) => { this.handlePageChange(event, new_page) } }
-										// onChangeRowsPerPage={handleChangeRowsPerPage}
+									rowsPerPageOptions={[20]}
+									count={this.state.data.length}
+									rowsPerPage={this.state.rows_per_page}
+									page={this.state.current_page}
+									onChangePage={ (event, new_page) => { this.handlePageChange(event, new_page) } }
+									// onChangeRowsPerPage={handleChangeRowsPerPage}
 								/>
 							</Paper>
 						</Grid>

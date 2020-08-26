@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.highlight {
+  background-color: hsl(228, 100%, 97%);;
+}
+
 .nav-bar {
   /* display: flex; */
   width: 100%;
@@ -32,6 +36,24 @@
 
 .right {
   margin-left: auto;
+}
+
+
+.about {
+  /* width: 80%; */
+  
+  background-color: #f3f3f3;
+  background-color: hsl(228, 100%, 99%);
+  
+  /* margin-left: 10%; */
+  /* margin-bottom: 1%; */
+  margin-top: 1%;
+  padding: 1% 1%;
+
+}
+
+.about p {
+  text-align: left;
 }
 
 .search-body {

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
-import NavBar from './navBar';
+// import NavBar from './navBar';
+// import Venues from './venues';
 
+import Grid from '@material-ui/core/Grid';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -16,10 +18,10 @@ class ShowConferences extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            error: null,
+			error: null,
 			isLoaded: false,
 			page: 0,
-            data: [], 
+			data: [], 
 		};
 	}
 
@@ -48,17 +50,34 @@ class ShowConferences extends Component {
 	}
 	
     handlePageChange(e, new_page) {
-        this.setState({
-            page: new_page
-        });
+			this.setState({
+				page: new_page
+			});
     }
     
 	renderConferences(data) {
-        const rowsPerPage = 20;
+		const rowsPerPage = 20;
 
 		return (
-            <div>
-				<NavBar />
+			<div>
+				{/* <NavBar /> */}
+				<div class="nav-bar">
+					<Grid container spacing={0} >
+						<Grid item xs={8} />
+						<Grid item xs={1} >
+							<a href='/search'> <div> Busca </div> </a>
+						</Grid>
+						<Grid item xs={1} >
+							<a href='/periodicos'> <div> Periódicos </div> </a>
+						</Grid>
+						<Grid item xs={1} >
+							<a href='/eventos'>  <div class="highlight"> Eventos </div> </a>
+						</Grid>
+						<Grid item xs={1} >
+							<a href='/about' >   <div> Sobre </div>  </a>
+						</Grid>
+					</Grid>
+				</div>
 
 				<div class='venues'>
 					<Paper>
@@ -99,15 +118,15 @@ class ShowConferences extends Component {
 
             </div>
 		);
-    }
+	}
     
 	render() {
-        const { error, isLoaded, data } = this.state;
-        
-        return (
-            this.renderConferences(data)
-        );
-	  }
+		const { error, isLoaded, data } = this.state;
+		
+		return (
+			this.renderConferences(data)
+		);
+	}
 
 }
 
