@@ -1,6 +1,6 @@
 
 const search = async (search, count, author, venue, begin_date, end_date) => {
-    const query = `http://187.107.118.105:4000/search?query=${search}&count=${count}&author=${author}&venue=${venue}&begin_date=${begin_date}&end_date=${end_date}`;
+    const query = `http://localhost:4000/search?query=${search}&count=${count}&author=${author}&venue=${venue}&begin_date=${begin_date}&end_date=${end_date}`;
     // console.log(query);
     const res  = await fetch(query);
     const json = await res.json();
@@ -8,6 +8,13 @@ const search = async (search, count, author, venue, begin_date, end_date) => {
 };
 
 function getAuthorData(data){
+    if (data === []){
+        return {
+            nodes: [],
+            links: []
+        }
+    }
+
     var my_nodes = [];
     var my_edges = [];
 

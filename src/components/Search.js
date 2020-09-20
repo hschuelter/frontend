@@ -109,9 +109,18 @@ class Search extends React.Component {
 	}
 
 	setShowGraph(e) {
-		this.setState({
-			show_graph: !this.state.show_graph
-		});
+		console.log(this.state.data)
+
+		if (this.state.data === null){ 
+			this.setState({
+				show_graph: false
+			});
+		} else {
+			this.setState({
+				show_graph: !this.state.show_graph
+			});
+
+		}
 		// console.log(this.state.show_graph);
 	}
 
@@ -139,11 +148,19 @@ class Search extends React.Component {
 			show_loading: true
 		});
 
+			
+
 		const result = await Api.search(search_field, count, author, venue, begin_date, end_date);
+		console.log(result.data)
+		if (result.data.length === 0) {
+			this.setState({show_graph: false});
+		}
+		
 		this.setState({
 			data: result.data, 
 			show_loading: false,
-			search: true
+			search: true,
+			current_page: 0
 		});
 	}
 
@@ -182,7 +199,7 @@ class Search extends React.Component {
 
 					{!this.state.search ? null : 
 					<div> 
-						{!this.state.show_graph ? null : 
+						{!(this.state.show_graph && this.state.data.length > 0)? null : 
 						<Grid container spacing={2}>
 							<Grid item xs={12} class="graph">
 								<Graph
