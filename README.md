@@ -14,5 +14,5 @@ Acesse [http://localhost:3000](http://localhost:3000) para visualizar no browser
 ## Dependências
 
 Este diretório é apenas o Frontend da ferramenta, para ter acesso aos artigos é necessário obter: <br />
-o [https://github.com/hschuelter/as-backend](backend).<br />
+o [backend](https://github.com/hschuelter/as-backend).<br />
 o conjunto de metadados dos artigos.
