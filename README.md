@@ -1,68 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Essa é a interface de uma ferramenta de busca de artigos científicos. A ferramenta necessita de palavras-chave, nomes de autores, nomes de períodicos ou eventos científicos, um intervalo de datas para retornar artigos científicos da área de Ciência da Computação.
 
-## Available Scripts
+Esta ferramenta foi desenvolvida por Arthur Schuelter como Trabalho de Conclusão de Curso para o curso de Bacharelado em Ciência da Computação da UDESC. O objetivo dessa ferramenta é auxiliar a busca de artigos científicos para pesquisadores da área de Ciência da Computação. Os artigos foram coletados da base da DBLP e representam um subconjunto dos artigos disponíveis na DBLP. Foram selecionados periódicos e eventos das sub-áreas de IHC-Interação Humano Computador e BD-Banco de Dados.
 
-In the project directory, you can run:
+## Scripts disponíveis
+
+No diretório do projeto, é possível executar:
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Inicia a aplicação em modo de desenvolvimento. <br />
+Acesse [http://localhost:3000](http://localhost:3000) para visualizar no browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Dependências
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Este diretório é apenas o Frontend da ferramenta, para ter acesso aos artigos é necessário obter: <br />
+o [https://github.com/hschuelter/as-backend](backend).<br />
+o conjunto de metadados dos artigos.
